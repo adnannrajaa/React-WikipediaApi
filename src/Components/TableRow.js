@@ -6,9 +6,9 @@ export class TableRow extends Component {
             <div className='row item'>
                 <div className='col-1 item-head'></div>
                 <div className='col-11 item-body'>
-                    {/* <a target='_blank' href='https://en.wikipedia.org/wiki/" + data.query.search[i].title.replace(" ", "%20") + "'> */}
+                    <a target='_blank' rel="noopener noreferrer" href={this.props.titleUrl}>
                         <h2>{this.props.title}</h2>
-                    {/* </a> */}
+                    </a>
                     <h6>{this.props.timestamp}</h6>
                     <p>{this.props.snippet}</p>
 

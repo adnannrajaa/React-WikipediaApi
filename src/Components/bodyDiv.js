@@ -8,6 +8,7 @@ class BodyDiv extends Component {
             rows.push(
                 <TableRow
                 key={dataObj.pageid}
+                titleUrl = {dataObj.titleUrl}
                     pageid={dataObj.pageid}
                     title={dataObj.title}
                     snippet={dataObj.snippet}

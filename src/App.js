@@ -16,6 +16,7 @@ export class App extends Component {
       pageid:'',
       timestamp:'',
       snippet:'',
+      titleUrl:'',
     };
   }
   handleSearchEvents = (title, e) => {
@@ -68,6 +69,8 @@ export class App extends Component {
         var record = result.query.search
         for (var i = 0; i < len; i++) {
           let entry = {};
+           
+          entry.titleUrl = `https://en.wikipedia.org/wiki/${record[i].title.replace(" ", "%20")}`
           entry.pageid = record[i].pageid;
           entry.snippet = record[i].snippet;
           entry.title = record[i].title;
@@ -103,6 +106,7 @@ export class App extends Component {
         />
 
         <BodyDiv 
+        titleUrl = {this.state.titleUrl}
         title = {this.state.title}
         snippet={this.state.snippet}
         timestamp={this.state.timestamp}
