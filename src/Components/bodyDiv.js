@@ -1,22 +1,26 @@
 import React, { Component } from 'react';
+import TableRow from './TableRow';
 
-class bodyDiv extends Component {
+class BodyDiv extends Component {
     render() {
+        let rows = [];
+        this.props.data.forEach((dataObj) => {
+            rows.push(
+                <TableRow
+                key={dataObj.pageid}
+                    pageid={dataObj.pageid}
+                    title={dataObj.title}
+                    snippet={dataObj.snippet}
+                    timestamp={dataObj.timestamp}
+                />
+            );
+        });
         return (
             <div>
-                <div id="searchResults">
-                    <div className="row">
-                        <div className="col">
-                            <a target="_blank" id="randomLink" href="#">
-                                <h2 className="text-center" id="randomTitle"></h2>
-                            </a>
-                            <p className="text-center" id="randomExtract"></p>
-                        </div>
-                    </div>
-                </div>
+                {rows}
             </div>
         );
     }
 }
 
-export default bodyDiv;
+export default BodyDiv;
