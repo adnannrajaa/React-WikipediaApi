@@ -68,6 +68,7 @@ export class App extends Component {
         let array = [];
         var record = result.query.search
         for (var i = 0; i < len; i++) {
+          console.log(record[i])
           let entry = {};
            
           entry.titleUrl = `https://en.wikipedia.org/wiki/${record[i].title.replace(" ", "%20")}`
