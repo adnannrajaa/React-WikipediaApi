@@ -10,7 +10,7 @@ export class TableRow extends Component {
                         <h2>{this.props.title}</h2>
                     </a>
                     <h6>{this.props.timestamp}</h6>
-                    <p>{this.props.snippet}</p>
+                    <p dangerouslySetInnerHTML={{__html:this.props.snippet}}></p>
 
                 </div>
             </div>
